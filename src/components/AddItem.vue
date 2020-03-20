@@ -6,7 +6,19 @@
         <input type="text" v-model.lazy="item.name" required/>
         <label>Item Category</label>
         <input type="text" v-model.lazy="item.category"/>
+        <label>Select your tier</label>
+        <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        </select>
+        <label>Require Additional Help? Check only if required</label>
+        <input type="checkbox" id="yes" value="yes" v-model="checkedNames">
+        <br>
+        
         <button v-on:click.prevent="addItem">Add Item</button>
+
         
     </form>
   </div>
@@ -22,7 +34,8 @@ export default {
         msg:"Add Item",
         item:{
           name:'',
-          category:''
+          category:'',
+          requireHelp:''
         },
         
         
